@@ -24,13 +24,16 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/"}>About</Link>
+                <Link to={"/"}>All Toys</Link>
               </li>
               <li>
-                <Link to={"/"}>Services</Link>
+                <Link to={"/"}>My Toys</Link>
               </li>
               <li>
-                <Link to={"/"}>Contact</Link>
+                <Link to={"/"}>Add A Toy</Link>
+              </li>
+              <li>
+                <Link to={"/"}>Blog</Link>
               </li>
             </ul>
           </nav>
@@ -64,13 +67,16 @@ const Header = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/"}>About</Link>
+                <Link to={"/"}>All Toys</Link>
               </li>
               <li>
-                <Link to={"/"}>Services</Link>
+                <Link to={"/"}>My Toys</Link>
               </li>
               <li>
-                <Link to={"/"}>Contact</Link>
+                <Link to={"/"}>Add A Toy</Link>
+              </li>
+              <li>
+                <Link to={"/"}>Blog</Link>
               </li>
               <li>
                 <button className="btn btn-sm md:hidden">Logout</button>
