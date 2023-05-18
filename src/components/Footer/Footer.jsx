@@ -137,6 +137,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className="border-[#02224d] border-[.7px] w-full my-5"></div>
+        <div className="copyright">
+          <p>Monstar toy shop © 2023. All Rights Reserved.</p>
+        </div>
       </div>
     </footer>
   );
