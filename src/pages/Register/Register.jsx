@@ -100,7 +100,9 @@ const Register = () => {
       setPhotoError("Empty field not allowed");
       return;
     } else if (!validateURL(photoInput)) {
-      setPhotoError("Enter valid URL. E.g. https://www.example.com");
+      setPhotoError(
+        "Enter valid URL. E.g. https://www.example.com or https://example.com"
+      );
       return;
     } else {
       setPhotoError("");
@@ -218,7 +220,9 @@ const Register = () => {
                     onChange={handleUserName}
                     autoComplete="name"
                     required
-                    className={`mt-1 block p-4 w-full rounded-md border-green-600 shadow-sm focus:border-green-600 focus:ring-green-600`}
+                    className={`mt-1 block p-4 w-full rounded-md shadow-sm ${
+                      name ? (nameError ? "input-error" : "input-success") : ""
+                    }`}
                   />
                 </div>
                 <div>
@@ -233,7 +237,13 @@ const Register = () => {
                     onChange={handleUserEmail}
                     autoComplete="email"
                     required
-                    className="mt-1 block p-4 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className={`mt-1 block p-4 w-full rounded-md shadow-sm ${
+                      email
+                        ? emailError
+                          ? "input-error"
+                          : "input-success"
+                        : ""
+                    }`}
                   />
                 </div>
                 <div>
@@ -249,7 +259,13 @@ const Register = () => {
                       onChange={handleUserPassword}
                       autoComplete="new-password"
                       required
-                      className="mt-1 block p-4 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                      className={`mt-1 block p-4 w-full rounded-md shadow-sm ${
+                        password
+                          ? passwordError
+                            ? "input-error"
+                            : "input-success"
+                          : ""
+                      }`}
                     />
                     <button
                       type="button"
@@ -305,7 +321,13 @@ const Register = () => {
                     value={photo}
                     onChange={handleUserPhoto}
                     autoComplete="photo"
-                    className="mt-1 block p-4 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className={`mt-1 block p-4 w-full rounded-md shadow-sm ${
+                      photo
+                        ? photoError
+                          ? "input-error"
+                          : "input-success"
+                        : ""
+                    }`}
                   />
                 </div>
                 <div>
