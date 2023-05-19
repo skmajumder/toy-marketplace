@@ -8,3 +8,10 @@ body {
   line-height: 1.2;
   font-weight: 400;
 }
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+}

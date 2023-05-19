@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "../../../public/img/logo.png";
-import User from "../../../public/img/user-avatar.jpg";
-import { Link } from "react-router-dom";
+import UserAvatar from "../../../public/img/avatar.png";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Header = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, logout } = useContext(AuthContext);
 
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const handleToggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const defaultUserAvatar = user?.photoURL || UserAvatar;
+
+  const navigate = useNavigate();
+
+  const handleRedirectLogin = () => {
+    navigate("/login");
   };
 
   return (
@@ -38,10 +48,29 @@ const Header = () => {
             </ul>
           </nav>
           <div className="w-3/12 flex justify-start md:justify-end gap-0 md:gap-3">
-            <div className="tooltip" data-tip="hello">
-              <img src={User} alt="User Avatar" className="h-8 rounded-full" />
-            </div>
-            <button className="btn btn-sm hidden md:block">Logout</button>
+            {user ? (
+              <>
+                <div className="tooltip" data-tip={user?.displayName}>
+                  <img
+                    src={defaultUserAvatar}
+                    alt="User Avatar"
+                    className="h-8 rounded-full"
+                  />
+                </div>
+                <button onClick={logout} className="btn btn-sm hidden md:block">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={handleRedirectLogin}
+                  className="btn btn-sm hidden md:block"
+                >
+                  Login
+                </button>
+              </>
+            )}
           </div>
           <button
             className="block md:hidden"

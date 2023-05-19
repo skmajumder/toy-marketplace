@@ -3,13 +3,12 @@ import { Helmet } from "react-helmet";
 import Header from "../../components/Header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const AllToysLayout = () => {
   return (
     <>
-      <Helmet>
-        <title>All Toys | Monstar Toy Store</title>
-      </Helmet>
+      <PageTitle pageTitle={"All Toys"} />
       <Header />
       <main className="min-h-[calc(100vh-120px)]">
         <Outlet />

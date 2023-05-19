@@ -2,14 +2,12 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
-import { Helmet } from "react-helmet";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const MainLayout = () => {
   return (
     <>
-      <Helmet>
-        <title>Home Page | Monstar Toy Store</title>
-      </Helmet>
+      <PageTitle pageTitle={"Home Page"} />
       <Header />
       <main className="min-h-[calc(100vh-120px)]">
         <Outlet />
