@@ -1,3 +1,24 @@
+import {
+  toy1,
+  toy2,
+  toy3,
+  toy4,
+  toy5,
+  toy6,
+  toy7,
+  toy8,
+  toy9,
+  toy10,
+  toy11,
+  toy12,
+  toy13,
+  toy14,
+  toy15,
+  toy16,
+  toy17,
+  toy18,
+} from "../assets";
+
 export const features = [
   {
     id: 1,

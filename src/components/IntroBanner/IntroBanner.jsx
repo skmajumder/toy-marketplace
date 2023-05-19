@@ -6,7 +6,7 @@ const IntroBanner = ({ info }) => {
   return (
     <>
       <div
-        className={`intro-banner bg-[url('${img}')] bg-cover bg-center bg-no-repeat px-10 py-16`}
+        className={`intro-banner bg-[url('https://i.ibb.co/7Sr7ZFv/intro-banner.webp')] bg-cover bg-center bg-no-repeat px-10 py-16`}
       >
         <p className="text-3xl font-medium text-[#02224d] tracking-wide leading-8 mb-5">
           {title}

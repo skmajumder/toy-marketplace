@@ -1,0 +1,199 @@
+[
+  {
+    "picture": "https://i.ibb.co/PYsgzNt/toy1.jpg",
+    "toy_name": "Super Stacking Blocks",
+    "price": 19.99,
+    "rating": 4.5,
+    "seller_name": "Toy World",
+    "seller_email": "info@toyworld.com",
+    "sub_category": "Building Blocks",
+    "available_quantity": 10,
+    "detail_description": "The Super Stacking Blocks set includes 100 colorful blocks of various shapes and sizes. It promotes creativity and helps children develop their motor skills."
+  },
+  {
+    "picture": "https://i.ibb.co/ZGnzwDD/toy2.jpg",
+    "toy_name": "Robo Explorer",
+    "price": 29.99,
+    "rating": 4.0,
+    "seller_name": "Robotics R Us",
+    "seller_email": "support@roboticsrus.com",
+    "sub_category": "Robotics Kits",
+    "available_quantity": 5,
+    "detail_description": "Build and program your own robot with the Robo Explorer kit. Comes with a variety of parts and sensors for endless possibilities."
+  },
+  {
+    "picture": "https://i.ibb.co/6WNhSV4/toy3.jpg",
+    "toy_name": "Rainbow Play Dough",
+    "price": 9.99,
+    "rating": 4.8,
+    "seller_name": "Playtime Co.",
+    "seller_email": "customerservice@playtimeco.com",
+    "sub_category": "Art Supplies",
+    "available_quantity": 20,
+    "detail_description": "Get creative with this set of rainbow-colored play dough. Perfect for molding, shaping, and creating all sorts of fun designs."
+  },
+  {
+    "picture": "https://i.ibb.co/9rqJJTJ/toy4.jpg",
+    "toy_name": "Magic Kit",
+    "price": 24.99,
+    "rating": 4.2,
+    "seller_name": "Mystical Toys",
+    "seller_email": "info@mysticaltoys.com",
+    "sub_category": "Magic Sets",
+    "available_quantity": 8,
+    "detail_description": "Amaze your friends and family with the Magic Kit. Comes with everything you need to perform a variety of tricks and illusions."
+  },
+  {
+    "picture": "https://i.ibb.co/DCkrLSS/toy5.jpg",
+    "toy_name": "Dinosaur Skeleton Excavation Kit",
+    "price": 14.99,
+    "rating": 4.6,
+    "seller_name": "Paleontology Co.",
+    "seller_email": "support@paleontologyco.com",
+    "sub_category": "Science Kits",
+    "available_quantity": 12,
+    "detail_description": "Dig up and assemble a realistic dinosaur skeleton with this excavation kit. Learn about paleontology and have fun at the same time!"
+  },
+  {
+    "picture": "https://i.ibb.co/2qdrqTv/toy6.jpg",
+    "toy_name": "Crash Test Lab",
+    "price": 34.99,
+    "rating": 3.9,
+    "seller_name": "Tech Toys",
+    "seller_email": "sales@techtoys.com",
+    "sub_category": "Physics Kits",
+    "available_quantity": 3,
+    "detail_description": "Test the laws of physics with the Crash Test Lab. Build your own crash test vehicle and put it to the ultimate test!"
+  },
+  {
+    "picture": "https://i.ibb.co/ftdFrM7/toy7.jpg",
+    "toy_name": "Remote Control Car",
+    "price": 49.99,
+    "rating": 4.1,
+    "seller_name": "Speed Demon Racing",
+    "seller_email": "customerservice@speeddemonracing.com",
+    "sub_category": "Remote Control Toys",
+    "available_quantity": 6,
+    "detail_description": "Race around with the Remote Control Car. Features high-speed performance and responsive controls for maximum fun."
+  },
+  {
+    "picture": "https://i.ibb.co/sRvpFGQ/toy8.jpg",
+    "toy_name": "Puzzle Pack",
+    "price": 12.99,
+    "rating": 4.7,
+    "seller_name": "Brain Games Inc.",
+    "seller_email": "info@braingamesinc.com",
+    "sub_category": "Puzzles",
+    "available_quantity": 15,
+    "detail_description": "Solve a variety of puzzles with the Puzzle Pack. Includes crosswords, word searches, and jigsaw puzzles for hours of brain-teasing fun."
+  },
+  {
+    "picture": "https://i.ibb.co/gPmznt7/toy9.jpg",
+    "toy_name": "Glow-in-the-Dark Stars",
+    "price": 7.99,
+    "rating": 4.3,
+    "seller_email": "sales@techtoys.com",
+    "sub_category": "Physics Kits",
+    "available_quantity": 3,
+    "detail_description": "Test the laws of physics with the Crash Test Lab. Build your own crash test vehicle and put it to the ultimate test!"
+  },
+  {
+    "picture": "https://i.ibb.co/0J9ZHD5/toy10.jpg",
+    "toy_name": "Animal Finger Puppets",
+    "price": 5.99,
+    "rating": 4.9,
+    "seller_name": "Puppet World",
+    "seller_email": "info@puppetworld.com",
+    "sub_category": "Puppets",
+    "available_quantity": 25,
+    "detail_description": "Bring your imagination to life with these adorable animal finger puppets. Perfect for storytelling and creative play."
+  },
+  {
+    "picture": "https://i.ibb.co/bPVqdPB/toy11.jpg",
+    "toy_name": "Miniature Golf Set",
+    "price": 29.99,
+    "rating": 4.4,
+    "seller_name": "Sports Galore",
+    "seller_email": "customerservice@sportsgalore.com",
+    "sub_category": "Outdoor Games",
+    "available_quantity": 7,
+    "detail_description": "Get ready for a round of mini golf with this miniature golf set. Comes with everything you need to set up your own course!"
+  },
+  {
+    "picture": "https://i.ibb.co/pf2SSWz/toy12.jpg",
+    "toy_name": "Telescope",
+    "price": 79.99,
+    "rating": 4.0,
+    "seller_name": "Astronomy Co.",
+    "seller_email": "support@astronomyco.com",
+    "sub_category": "Science Toys",
+    "available_quantity": 4,
+    "detail_description": "Explore the stars with this high-quality telescope. Ideal for beginners and seasoned stargazers alike."
+  },
+  {
+    "picture": "https://i.ibb.co/xL4zDfy/toy13.jpg",
+    "toy_name": "Cooking Playset",
+    "price": 39.99,
+    "rating": 4.6,
+    "seller_name": "Little Chefs",
+    "seller_email": "info@littlechefs.com",
+    "sub_category": "Play Food",
+    "available_quantity": 9,
+    "detail_description": "Cook up a storm with this realistic cooking playset. Comes with pots, pans, and utensils for a complete kitchen experience."
+  },
+  {
+    "picture": "https://i.ibb.co/SNtT9wP/toy14.jpg",
+    "toy_name": "Musical Instruments Set",
+    "price": 24.99,
+    "rating": 4.3,
+    "seller_name": "Musical Toys Inc.",
+    "seller_email": "customerservice@musicaltoysinc.com",
+    "sub_category": "Musical Toys",
+    "available_quantity": 11,
+    "detail_description": "Get your groove on with this set of musical instruments. Includes a guitar, keyboard, and drum set for hours of musical fun."
+  },
+  {
+    "picture": "https://i.ibb.co/cxtgNXZ/toy15.jpg",
+    "toy_name": "Squishy Stress Balls",
+    "price": 8.99,
+    "rating": 4.7,
+    "seller_name": "Stress Less Co.",
+    "seller_email": "info@stresslessco.com",
+    "sub_category": "Stress Relief",
+    "available_quantity": 30,
+    "detail_description": "Relieve stress and anxiety with these squishy stress balls. Perfect for squeezing and stretching to release tension."
+  },
+  {
+    "picture": "https://i.ibb.co/V3Ztn98/toy16.jpg",
+    "toy_name": "Art Set",
+    "price": 19.99,
+    "rating": 4.1,
+    "seller_name": "Creative Supplies",
+    "seller_email": "support@creativesupplies.com",
+    "sub_category": "Art Supplies",
+    "available_quantity": 13,
+    "detail_description": "Unleash your inner artist with this comprehensive art set. Includes paints, brushes, and canvas for painting masterpieces."
+  },
+  {
+    "picture": "https://i.ibb.co/YcDG8jX/toy17.jpg",
+    "toy_name": "Remote Control Helicopter",
+    "price": 59.99,
+    "rating": 4.2,
+    "seller_name": "Sky High Toys",
+    "seller_email": "customerservice@skyhightoys.com",
+    "sub_category": "Remote Control Toys",
+    "available_quantity": 2,
+    "detail_description": "Take to the skies with the Remote Control Helicopter. Features precision controls and stable flight for an exhilarating experience."
+  },
+  {
+    "picture": "https://i.ibb.co/nr6pvLG/toy18.jpg",
+    "toy_name": "Wooden Train Set",
+    "price": 42.99,
+    "rating": 4.8,
+    "seller_name": "Toy Train Co.",
+    "seller_email": "info@toytrainco.com",
+    "sub_category": "Musical Toys",
+    "available_quantity": 30,
+    "detail_description": "Relieve stress and anxiety with these squishy stress balls. Perfect for squeezing and stretching to release tension."
+  }
+]
