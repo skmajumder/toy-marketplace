@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../components/GoogleLogin/GoogleLogin";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import swal from "sweetalert";
 
 const Register = () => {
   const { signUp, googleSignIn, logout } = useContext(AuthContext);
@@ -154,6 +155,7 @@ const Register = () => {
     signUp(userEmail, userPassword)
       .then((userCredential) => {
         const user = userCredential.user;
+        swal("Successfully!", "User SignUp Successfully", "success");
         // Set user name and photo
         handleUpdateUser(user, userName, userPhotoUrl);
         setName("");
@@ -173,6 +175,8 @@ const Register = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
+        swal("Successfully!", "User Signin Successfully", "success");
+        navigate("/");
       })
       .catch((error) => {
         setRegisterError(error.message);

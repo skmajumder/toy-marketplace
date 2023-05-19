@@ -7,7 +7,7 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 const MainLayout = () => {
   return (
     <>
-      <PageTitle pageTitle={"Home Page"} />
+      <PageTitle pageTitle={"Home"} />
       <Header />
       <main className="min-h-[calc(100vh-120px)]">
         <Outlet />

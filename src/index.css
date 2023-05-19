@@ -30,3 +30,7 @@ input:focus {
 label {
   cursor: pointer;
 }
+
+.toy-category:not(:last-of-type)::after {
+  content: ", ";
+}
