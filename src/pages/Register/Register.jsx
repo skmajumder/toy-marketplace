@@ -1,17 +1,19 @@
 import React, { useContext, useState } from "react";
 import PageTitle from "../../components/PageTitle/PageTitle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../components/GoogleLogin/GoogleLogin";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Register = () => {
-  const { signUp, googleSignIn } = useContext(AuthContext);
+  const { signUp, googleSignIn, logout } = useContext(AuthContext);
 
   //   Show password on click
   const [showPassword, setShowPassword] = useState(false);
   const handelPasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const navigate = useNavigate();
 
   //   Check url is valid or not
   const validateURL = (url) => {
@@ -157,10 +159,12 @@ const Register = () => {
         setEmail("");
         setPassword("");
         setPhoto("");
+        logout();
+        navigate("/login");
       })
       .catch((error) => {
-        const errorMessage = error.message;
-        setRegisterError(errorMessage);
+        const registerErrorMessage = error.message;
+        setRegisterError(registerErrorMessage);
       });
   };
 
