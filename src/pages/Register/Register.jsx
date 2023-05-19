@@ -3,6 +3,7 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../components/GoogleLogin/GoogleLogin";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { signUp, googleSignIn, logout } = useContext(AuthContext);

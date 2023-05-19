@@ -129,7 +129,13 @@ const Login = () => {
                     onChange={handleLoginEmail}
                     autoComplete="email"
                     required
-                    className="mt-1 block p-4 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className={`mt-1 block p-4 w-full rounded-md shadow-sm ${
+                      email
+                        ? emailError
+                          ? "input-error"
+                          : "input-success"
+                        : ""
+                    }`}
                   />
                 </div>
                 <div>
@@ -144,7 +150,13 @@ const Login = () => {
                     onChange={handleLoginPassword}
                     autoComplete="current-password"
                     required
-                    className="mt-1 block p-4 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className={`mt-1 block p-4 w-full rounded-md shadow-sm ${
+                      password
+                        ? passwordError
+                          ? "input-error"
+                          : "input-success"
+                        : ""
+                    }`}
                   />
                 </div>
                 <div>
