@@ -1,11 +1,17 @@
 import React, { useContext, useState } from "react";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import GoogleLogin from "../../components/GoogleLogin/GoogleLogin";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
+
+  // To find active router location
+  const activeRouterLocation = useLocation();
+  const navigate = useNavigate();
+
+  const redirectLocation = activeRouterLocation?.state?.from?.pathname || "/";
 
   // Store the user Login info and error message in state
 
@@ -76,6 +82,7 @@ const Login = () => {
         const loggedUser = userCredential.user;
         setEmail("");
         setPassword("");
+        navigate(redirectLocation);
       })
       .catch((error) => {
         const loginErrorMessage = error.message;
@@ -87,6 +94,7 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
+        navigate(redirectLocation);
       })
       .catch((error) => {
         setRegisterError(error.message);
