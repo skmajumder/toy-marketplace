@@ -3,7 +3,11 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import TabBody from "../../components/TabBody/TabBody";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const ShopByCategory = () => {
+  AOS.init();
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -16,7 +20,11 @@ const ShopByCategory = () => {
 
   return (
     <>
-      <section className="section-shopby-category">
+      <section
+        className="section-shopby-category"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
         <div className="container px-10 py-10">
           <h3 className="text-3xl font-bold mb-12 text-center">
             Shop by Category

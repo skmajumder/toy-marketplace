@@ -4,6 +4,7 @@ import Features from "./Features";
 import IntroBanners from "./IntroBanners";
 import GallerySection from "./GallerySection";
 import ShopByCategory from "./ShopByCategory";
+import SubscribeForm from "./SubscribeForm";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <GallerySection />
       <ShopByCategory />
       <Features />
+      <SubscribeForm />
     </>
   );
 };

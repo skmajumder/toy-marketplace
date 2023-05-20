@@ -1,9 +1,17 @@
 import React from "react";
 import BannerImg from "../../../public/img/banner.webp";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Banner = () => {
+  AOS.init();
+
   return (
-    <section className="section-banner h-screen">
+    <section
+      className="section-banner h-screen"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <div className="container px-10 py-10">
         <div className="flex justify-between items-center gap-10">
           <div className="banner-text w-1/2 flex flex-col justify-center">

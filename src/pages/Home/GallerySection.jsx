@@ -1,4 +1,6 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
@@ -27,6 +29,7 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 
 const GallerySection = () => {
+  AOS.init();
   const images = [
     toy1,
     toy2,
@@ -45,7 +48,11 @@ const GallerySection = () => {
     toy15,
   ];
   return (
-    <section className="section-gallery">
+    <section
+      className="section-gallery"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <div className="container px-10 py-16">
         <h3 className="text-3xl font-bold mb-12 text-center">Gallery</h3>
         <LightGallery

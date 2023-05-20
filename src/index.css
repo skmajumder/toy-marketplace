@@ -35,3 +35,14 @@ label {
   content: ", ";
 }
 
+.subscribe-form {
+  border-bottom: 1px solid #02224db3;
+}
+.subscribe-form:focus {
+  outline: 0;
+}
+
+.subscribe-form {
+  border-bottom: 1px solid #02224db3;
+  padding: 30px 20px;
+}

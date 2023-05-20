@@ -11,11 +11,18 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
+  AOS.init();
   const { user } = useContext(AuthContext);
   return (
-    <footer className="footer bg-[#f5f5f5]">
+    <footer
+      className="footer bg-[#f5f5f5]"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <div className="container px-10 py-16">
         <div className="grid grid-cols-2 gap-x-4 gap-y-8 items-start md:grid-cols-5 md:gap-0">
           <div className="about col-span-2 md:col-span-2 flex flex-col gap-2">

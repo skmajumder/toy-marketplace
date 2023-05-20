@@ -4,7 +4,11 @@ import UserAvatar from "../../../public/img/avatar.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Header = () => {
+  AOS.init();
   const { user, logout } = useContext(AuthContext);
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,7 +26,11 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white-900 p-4">
+      <header
+        className="bg-white-900 p-4"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
         <div className="container px-10">
           <div className="flex items-center justify-between">
             <div className="w-3/12">
