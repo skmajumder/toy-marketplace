@@ -50,7 +50,7 @@ const Header = () => {
                   </li>
                 )}
                 <li>
-                  <Link to={"/"}>Blog</Link>
+                  <Link to={"/blog"}>Blog</Link>
                 </li>
               </ul>
             </nav>
@@ -106,16 +106,20 @@ const Header = () => {
                   <Link to={"/"}>Home</Link>
                 </li>
                 <li>
-                  <Link to={"/"}>All Toys</Link>
+                  <Link to={"/all-toys"}>All Toys</Link>
                 </li>
+                {user && (
+                  <li>
+                    <Link to={"/my-toys"}>My Toys</Link>
+                  </li>
+                )}
+                {user && (
+                  <li>
+                    <Link to={"/add-toy"}>Add A Toy</Link>
+                  </li>
+                )}
                 <li>
-                  <Link to={"/"}>My Toys</Link>
-                </li>
-                <li>
-                  <Link to={"/"}>Add A Toy</Link>
-                </li>
-                <li>
-                  <Link to={"/"}>Blog</Link>
+                  <Link to={"/blog"}>Blog</Link>
                 </li>
                 <li>
                   <button className="btn btn-sm md:hidden">Logout</button>

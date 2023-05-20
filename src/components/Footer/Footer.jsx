@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../../../public/img/logo.png";
 import {
   FaEnvelopeOpen,
@@ -10,8 +10,10 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Footer = () => {
+  const { user } = useContext(AuthContext);
   return (
     <footer className="footer bg-[#f5f5f5]">
       <div className="container px-10 py-16">
@@ -56,16 +58,20 @@ const Footer = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <Link to={"/"}>All Toys</Link>
+                <Link to={"/all-toys"}>All Toys</Link>
               </li>
+              {user && (
+                <li>
+                  <Link to={"/my-toys"}>My Toys</Link>
+                </li>
+              )}
+              {user && (
+                <li>
+                  <Link to={"/add-toy"}>Add A Toy</Link>
+                </li>
+              )}
               <li>
-                <Link to={"/"}>My Toys</Link>
-              </li>
-              <li>
-                <Link to={"/"}>Add A Toy</Link>
-              </li>
-              <li>
-                <Link to={"/"}>Blog</Link>
+                <Link to={"/blog"}>Blog</Link>
               </li>
             </ul>
           </div>

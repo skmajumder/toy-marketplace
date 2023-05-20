@@ -13,6 +13,8 @@ import SingleToy from "../pages/AllToys/SingleToy";
 import MyToysLayout from "../layouts/MyToysLayout/MyToysLayout";
 import MyToys from "../pages/MyToys/MyToys";
 import UpdateToy from "../pages/MyToys/UpdateToy/UpdateToy";
+import Blog from "../pages/Blog/Blog";
+import BlogLayout from "../layouts/BlogLayout/BlogLayout";
 
 const router = createBrowserRouter([
   {
@@ -106,7 +108,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/blog",
-        element: <BlogPage />,
+        element: <Blog />,
       },
     ],
   },
