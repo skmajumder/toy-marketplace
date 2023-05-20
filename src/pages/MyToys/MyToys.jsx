@@ -6,14 +6,18 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [sortOrder, setSortOrder] = useState("");
+  console.log(sortOrder);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my-toys/${user?.email}`)
+    fetch(
+      `http://localhost:3000/my-toys?email=${user?.email}&sort=${sortOrder}`
+    )
       .then((response) => response.json())
       .then((data) => setMyToys(data));
-  }, [user?.email]);
+  }, [user?.email, sortOrder]);
 
   const handleRedirectUpdate = (toyID) => {
     navigate(`/my-toys/${toyID}`);
@@ -54,6 +58,21 @@ const MyToys = () => {
       <div className="section-my-toys">
         <div className="container px-10 my-16">
           <div className="flex flex-col">
+            <div className="my-4">
+              <button
+                onClick={() => setSortOrder("asc")}
+                className="px-4 py-2 bg-blue-500 text-white rounded-md mr-2"
+              >
+                Sort Ascending (Price)
+              </button>
+              <button
+                onClick={() => setSortOrder("desc")}
+                className="px-4 py-2 bg-blue-500 text-white rounded-md"
+              >
+                Sort Descending (Price)
+              </button>
+              <p className="inline ml-4">By Defult it sort by Date</p>
+            </div>
             <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">

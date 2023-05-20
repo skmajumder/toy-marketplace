@@ -187,6 +187,7 @@ const AddToy = () => {
                     {...register("rating", { required: true, min: 0, max: 5 })}
                     type="number"
                     autoComplete="off"
+                    step="any"
                     className="mt-1 block w-full p-4 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   />
                   {errors.rating && (
