@@ -43,20 +43,24 @@ const GallerySection = () => {
     toy13,
     toy14,
     toy15,
-    toy16,
-    toy17,
   ];
   return (
     <section className="section-gallery">
       <div className="container px-10 py-16">
+        <h3 className="text-3xl font-bold mb-12 text-center">Gallery</h3>
         <LightGallery
           speed={500}
           plugins={[lgThumbnail, lgZoom]}
-          elementClassNames="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4"
+          elementClassNames="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
         >
           {images.map((image, index) => (
-            <a key={index} href={image} className="rounded-lg overflow-hidden">
+            <a
+              key={index}
+              href={image}
+              className="relative rounded-lg overflow-hidden"
+            >
               <img src={image} alt={`Image ${index}`} className="w-full" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-500 opacity-30"></div>
             </a>
           ))}
         </LightGallery>
