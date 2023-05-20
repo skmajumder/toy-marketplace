@@ -26,7 +26,9 @@ const Header = () => {
         <div className="container px-10">
           <div className="flex items-center justify-between">
             <div className="w-3/12">
-              <img src={Logo} alt="Logo" className="h-auto md:h-14" />
+              <Link to={"/"}>
+                <img src={Logo} alt="Logo" className="h-auto md:h-14" />
+              </Link>
             </div>
             <nav className="w-6/12 hidden md:block">
               {/* Navigation menu */}
@@ -39,7 +41,7 @@ const Header = () => {
                 </li>
                 {user && (
                   <li>
-                    <Link to={"/"}>My Toys</Link>
+                    <Link to={"/my-toys"}>My Toys</Link>
                   </li>
                 )}
                 {user && (
@@ -123,9 +125,6 @@ const Header = () => {
           )}
         </div>
       </header>
-      <div className="flex justify-center">
-        <div className="w-[95%] h-[.5px] bg-gradient-to-r from-[rgba(2,0,36,1)] via-[rgba(9,9,121,0.9866071428571429)] to-[rgba(0,212,255,1)]"></div>
-      </div>
     </>
   );
 };

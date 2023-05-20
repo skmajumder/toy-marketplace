@@ -10,6 +10,8 @@ import PrivateRouters from "./PrivateRouters";
 import AddToy from "../pages/AddToy/AddToy";
 import AllToys from "../pages/AllToys/AllToys";
 import SingleToy from "../pages/AllToys/SingleToy";
+import MyToysLayout from "../layouts/MyToysLayout/MyToysLayout";
+import MyToys from "../pages/MyToys/MyToys";
 
 const router = createBrowserRouter([
   {
@@ -61,7 +63,26 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/add-toy",
-        element: <AddToy />,
+        element: (
+          <PrivateRouters>
+            <AddToy />
+          </PrivateRouters>
+        ),
+      },
+    ],
+  },
+  {
+    path: "my-toys",
+    element: <MyToysLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/my-toys",
+        element: (
+          <PrivateRouters>
+            <MyToys />
+          </PrivateRouters>
+        ),
       },
     ],
   },

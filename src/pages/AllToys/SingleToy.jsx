@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const SingleToy = () => {
   const { id: toyID } = useParams();
@@ -30,6 +31,7 @@ const SingleToy = () => {
 
   return (
     <>
+      <PageTitle pageTitle={`${name}`} />
       <section className="section-single-toy">
         <div className="container mx-auto py-12 px-10">
           <div className="flex justify-between items-start mb-10">
@@ -37,13 +39,15 @@ const SingleToy = () => {
               <img className="w-[80%]" src={pictureUrl} alt={name} />
             </div>
             <div className="w-1/2 space-y-4">
-              <h1 className="text-2xl font-bold text-[#02224d]">{name}</h1>
-              <div className="w-full my-3 h-px bg-gradient-to-r from-purple-500 to-02224d"></div>
+              <h1 className="text-4xl font-bold text-[#02224d]">{name}</h1>
+              <div className="flex justify-center">
+                <div className="w-full h-[.4px] bg-gradient-to-r from-[rgba(2,0,36,1)] via-[rgba(9,9,121,0.9866071428571429)] to-[rgba(0,212,255,1)] mb-6"></div>
+              </div>
               <div className="flex justify-start items-center gap-2">
                 <Rating style={{ maxWidth: 80 }} value={rating} readOnly />{" "}
                 <span>({rating}) Rating</span>
               </div>
-              <p className="text-4xl font-bold text-[#02224d]">
+              <p className="text-2xl font-bold text-[#02224d]">
                 Price: ${price}
               </p>
               <p>
@@ -91,7 +95,7 @@ const SingleToy = () => {
             </div>
           </div>
           <div className="toy-details pr-20">
-            <h2 className="text-4xl font-thin text-[#02224d] mb-10">
+            <h2 className="text-4xl font-extralight text-[#02224d] mb-10">
               Description
             </h2>
             <div className="w-full my-3 h-px bg-gradient-to-r from-purple-500 to-02224d"></div>
