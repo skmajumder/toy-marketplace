@@ -75,7 +75,7 @@ const UpdateToy = () => {
                 onSubmit={handleSubmit(handleUpdateToyInfo)}
               >
                 <div>
-                  <label htmlFor="name" className="font-medium">
+                  <label htmlFor="name" className="font-medium hidden">
                     ID
                   </label>
                   <input
@@ -85,7 +85,7 @@ const UpdateToy = () => {
                     autoComplete="off"
                     value={toyDetails?._id}
                     readOnly
-                    className="mt-1 w-full p-4 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                    className="mt-1 w-full p-4 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 hidden"
                   />
                   {errors.toyID && (
                     <p className="text-red-500 mt-1">toyID is required</p>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -16,6 +17,36 @@ const MyToys = () => {
 
   const handleRedirectUpdate = (toyID) => {
     navigate(`/my-toys/${toyID}`);
+  };
+
+  const handleDeleteToy = (toyID, toyName) => {
+    Swal.fire({
+      title: `Want to delete ${toyName}`,
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/delete-toy/${toyID}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                `${toyName} has been deleted Successfully.`,
+                "success"
+              );
+              const remaining = myToys.filter((toy) => toy._id !== toyID);
+              setMyToys(remaining);
+            }
+          });
+      }
+    });
   };
 
   return (
@@ -145,7 +176,12 @@ const MyToys = () => {
                               Update
                             </button>
                             <br />
-                            <button className="text-red-600 hover:text-red-900">
+                            <button
+                              onClick={() =>
+                                handleDeleteToy(toy?._id, toy?.name)
+                              }
+                              className="text-red-600 hover:text-red-900"
+                            >
                               Delete
                             </button>
                           </td>
