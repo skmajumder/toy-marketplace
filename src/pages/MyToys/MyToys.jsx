@@ -1,15 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:3000/my-toys/${user?.email}`)
       .then((response) => response.json())
       .then((data) => setMyToys(data));
   }, [user?.email]);
+
+  const handleRedirectUpdate = (toyID) => {
+    navigate(`/my-toys/${toyID}`);
+  };
 
   return (
     <>
@@ -131,7 +138,10 @@ const MyToys = () => {
                             </div>
                           </td>
                           <td className="px-3 py-4 whitespace-nowrap text-sm font-medium">
-                            <button className="text-indigo-600 hover:text-indigo-900 mr-2">
+                            <button
+                              onClick={() => handleRedirectUpdate(toy?._id)}
+                              className="text-indigo-600 hover:text-indigo-900 mr-2"
+                            >
                               Update
                             </button>
                             <br />

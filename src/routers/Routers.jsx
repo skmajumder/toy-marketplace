@@ -12,6 +12,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import SingleToy from "../pages/AllToys/SingleToy";
 import MyToysLayout from "../layouts/MyToysLayout/MyToysLayout";
 import MyToys from "../pages/MyToys/MyToys";
+import UpdateToy from "../pages/MyToys/UpdateToy/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -73,7 +74,11 @@ const router = createBrowserRouter([
   },
   {
     path: "my-toys",
-    element: <MyToysLayout />,
+    element: (
+      <PrivateRouters>
+        <MyToysLayout />
+      </PrivateRouters>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
@@ -81,6 +86,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRouters>
             <MyToys />
+          </PrivateRouters>
+        ),
+      },
+      {
+        path: ":id",
+        element: (
+          <PrivateRouters>
+            <UpdateToy />
           </PrivateRouters>
         ),
       },

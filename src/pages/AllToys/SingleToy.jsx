@@ -12,7 +12,7 @@ const SingleToy = () => {
     fetch(`http://localhost:3000/toy/${toyID}`)
       .then((response) => response.json())
       .then((data) => setToyDetails(data));
-  }, []);
+  }, [toyID]);
 
   const {
     _id: id,
