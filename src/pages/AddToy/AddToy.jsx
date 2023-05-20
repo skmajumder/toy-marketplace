@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
 import makeAnimated from "react-select/animated";
@@ -7,6 +7,7 @@ import swal from "sweetalert";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
+  const [categories, setCategories] = useState([]);
   const [selectedCategory, setselectedCategory] = useState(null);
   const [formErrorMessage, setFormErrorMessage] = useState("");
 
@@ -49,15 +50,13 @@ const AddToy = () => {
       });
   };
 
-  const categories = [
-    { value: "police-car", label: "Police Car Toys" },
-    { value: "animation-car", label: "Movie Car Toys" },
-    { value: "racing-car", label: "Racing Car Toys" },
-    { value: "playset-car", label: "Playset Car Toys" },
-    { value: "animal-car", label: "Animal Car Toys" },
-    { value: "transparent-car", label: "Transparent Car Toys" },
-    { value: "trucks-car", label: "Trucks Car Toys" },
-  ];
+  useEffect(() => {
+    fetch("http://localhost:3000/categories")
+      .then((response) => response.json())
+      .then((result) => {
+        setCategories(result);
+      });
+  }, [user?.email]);
 
   return (
     <>
@@ -144,20 +143,22 @@ const AddToy = () => {
                     </p>
                   )}
                 </div>
-                <div>
-                  <label htmlFor="subCategory" className="block font-medium">
-                    Sub-category
-                  </label>
-                  <CreatableSelect
-                    id="subCategory"
-                    className="mt-1"
-                    components={animatedComponents}
-                    defaultValue={selectedCategory}
-                    onChange={setselectedCategory}
-                    options={categories}
-                    isMulti
-                  />
-                </div>
+                {categories && (
+                  <div>
+                    <label htmlFor="subCategory" className="block font-medium">
+                      Sub-category
+                    </label>
+                    <CreatableSelect
+                      id="subCategory"
+                      className="mt-1"
+                      components={animatedComponents}
+                      defaultValue={selectedCategory}
+                      onChange={setselectedCategory}
+                      options={categories}
+                      isMulti
+                    />
+                  </div>
+                )}
                 <div>
                   <label htmlFor="price" className="block font-medium">
                     Price
@@ -227,6 +228,7 @@ const AddToy = () => {
                     id="description"
                     {...register("description")}
                     autoComplete="off"
+                    rows={4}
                     className="mt-1 block w-full p-4 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   />
                 </div>

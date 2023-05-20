@@ -11,7 +11,6 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
 
   const navigate = useNavigate();
-  const activeRouterLocation = useLocation();
 
   useEffect(() => {
     fetch("http://localhost:3000/all-toys")
