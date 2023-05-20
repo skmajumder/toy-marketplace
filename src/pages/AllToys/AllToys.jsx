@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AllToys = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [toys, setToys] = useState([]);
 
-  console.log(toys);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:3000/all-toys")
@@ -16,6 +17,11 @@ const AllToys = () => {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
+  };
+
+  const handleSingleToyDetailsRedirect = (toyID) => {
+    console.log(toyID);
+    navigate(`/all-toys/${toyID}`);
   };
 
   const filteredToys = toys.filter((toy) => {
@@ -82,7 +88,10 @@ const AllToys = () => {
                     <td className="py-4 px-4">{toy?.price}</td>
                     <td className="py-4 px-4">{toy?.availableQuantity}</td>
                     <td className="py-4 px-4">
-                      <button className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                      <button
+                        onClick={() => handleSingleToyDetailsRedirect(toy?._id)}
+                        className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      >
                         View Details
                       </button>
                     </td>
