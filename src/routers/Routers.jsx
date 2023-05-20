@@ -99,6 +99,17 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "blog",
+    element: <BlogLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/blog",
+        element: <BlogPage />,
+      },
+    ],
+  },
 ]);
 
 export default router;

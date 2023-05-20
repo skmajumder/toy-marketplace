@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
+import swal from "sweetalert";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const AllToys = () => {
+  const { user } = useContext(AuthContext);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [toys, setToys] = useState([]);
 
   const navigate = useNavigate();
+  const activeRouterLocation = useLocation();
 
   useEffect(() => {
     fetch("http://localhost:3000/all-toys")
@@ -20,7 +26,13 @@ const AllToys = () => {
   };
 
   const handleSingleToyDetailsRedirect = (toyID) => {
-    console.log(toyID);
+    if (!user?.email) {
+      swal(
+        "Unauthorized access",
+        "You have to log in first to view details",
+        "warning"
+      );
+    }
     navigate(`/all-toys/${toyID}`);
   };
 
