@@ -130,9 +130,26 @@ const Header = () => {
                 <li>
                   <Link to={"/blog"}>Blog</Link>
                 </li>
-                <li>
-                  <button className="btn btn-sm md:hidden">Logout</button>
-                </li>
+                {user ? (
+                  <>
+                    <li>
+                      <button onClick={logout} className="btn btn-sm md:hidden">
+                        SignOut
+                      </button>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <button
+                        onClick={handleRedirectLogin}
+                        className="btn btn-sm md:hidden"
+                      >
+                        Sign In
+                      </button>
+                    </li>
+                  </>
+                )}
               </ul>
             </nav>
           )}
