@@ -31,6 +31,12 @@ label {
   cursor: pointer;
 }
 
+.section-banner {
+  background-image: url("../public/img/hero-bg.png");
+  background-position: center;
+  background-size: cover;
+}
+
 .toy-category:not(:last-of-type)::after {
   content: ", ";
 }

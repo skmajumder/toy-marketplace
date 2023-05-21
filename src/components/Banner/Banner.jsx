@@ -26,9 +26,7 @@ const Banner = () => {
               cupiditate neque pariatur praesentium! Repudiandae magni voluptas
               modi quas molestias voluptate.
             </p>
-            <div>
-              <button className="btn btn-sm">Get Stared</button>
-            </div>
+            
           </div>
           <div className="banner-img w-full md:w-1/2">
             <img src={BannerImg} alt="Banner Image" className="md:w-[90%]" />
