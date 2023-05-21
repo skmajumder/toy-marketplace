@@ -3,6 +3,7 @@ import Logo from "../../../public/img/logo.png";
 import UserAvatar from "../../../public/img/avatar.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { HiOutlineUserCircle } from "react-icons/hi";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -74,18 +75,18 @@ const Header = () => {
                   </div>
                   <button
                     onClick={logout}
-                    className="btn btn-sm hidden md:block"
+                    className="btn btn-sm border-[#02224d] hidden md:block"
                   >
-                    Logout
+                    SignOut
                   </button>
                 </>
               ) : (
                 <>
                   <button
                     onClick={handleRedirectLogin}
-                    className="btn btn-sm hidden md:block"
+                    className="hidden md:block"
                   >
-                    Login
+                    <HiOutlineUserCircle className="w-8 h-8" />
                   </button>
                 </>
               )}
