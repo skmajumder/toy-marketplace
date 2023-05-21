@@ -7,7 +7,8 @@ server [https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-s
 
 ## Live Links
 
-Vercel [https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/]
+Site (Firebase) [https://toy-marketplace-client-c42f7.firebaseapp.com]
+Server (Vercel) [https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/]
 
 ## Monstar toy shop
 
