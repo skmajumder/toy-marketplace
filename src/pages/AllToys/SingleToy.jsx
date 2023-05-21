@@ -9,7 +9,9 @@ const SingleToy = () => {
   const [toyDetails, setToyDetails] = useState([]);
 
   useEffect(() => {
-    fetch(`https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/toy/${toyID}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/toy/${toyID}`
+    )
       .then((response) => response.json())
       .then((data) => setToyDetails(data));
   }, [toyID]);
@@ -32,11 +34,11 @@ const SingleToy = () => {
       <PageTitle pageTitle={`${name}`} />
       <section className="section-single-toy">
         <div className="container mx-auto py-12 px-10">
-          <div className="flex justify-between items-start mb-10">
-            <div className="w-1/2 text-center">
+          <div className="flex flex-col-reverse gap-10 md:flex md:flex-row md:gap-0 justify-between items-start mb-10">
+            <div className="w-full md:w-1/2 text-center">
               <img className="w-[80%]" src={pictureUrl} alt={name} />
             </div>
-            <div className="w-1/2 space-y-4">
+            <div className="w-full md:w-1/2 space-y-4">
               <h1 className="text-4xl font-bold text-[#02224d]">{name}</h1>
               <div className="flex justify-center">
                 <div className="w-full h-[.4px] bg-gradient-to-r from-[rgba(2,0,36,1)] via-[rgba(9,9,121,0.9866071428571429)] to-[rgba(0,212,255,1)] mb-6"></div>
@@ -92,7 +94,7 @@ const SingleToy = () => {
               </p>
             </div>
           </div>
-          <div className="toy-details pr-20">
+          <div className="toy-details md:pr-20">
             <h2 className="text-4xl font-extralight text-[#02224d] mb-10">
               Description
             </h2>
