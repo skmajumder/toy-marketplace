@@ -5,7 +5,7 @@ const TabBody = ({ category }) => {
   const [categoryPosts, setCategoryPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/categories/${category.value}`)
+    fetch(`https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/categories/${category.value}`)
       .then((response) => response.json())
       .then((result) => {
         setCategoryPosts(result);

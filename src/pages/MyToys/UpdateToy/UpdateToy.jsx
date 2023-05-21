@@ -12,7 +12,7 @@ const UpdateToy = () => {
   const [formErrorMessage, setFormErrorMessage] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/toy/${toyId}`)
+    fetch(`https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/toy/${toyId}`)
       .then((response) => response.json())
       .then((data) => {
         setToyDetails(data);
@@ -35,9 +35,8 @@ const UpdateToy = () => {
   }, [toyDetails]);
 
   const handleUpdateToyInfo = (data) => {
-    console.log(data);
     data.updateBy = user?.email;
-    fetch(`http://localhost:3000/update-toy/${data.toyID}`, {
+    fetch(`https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/update-toy/${data.toyID}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

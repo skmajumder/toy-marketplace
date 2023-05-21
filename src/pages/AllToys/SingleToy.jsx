@@ -9,7 +9,7 @@ const SingleToy = () => {
   const [toyDetails, setToyDetails] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/toy/${toyID}`)
+    fetch(`https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/toy/${toyID}`)
       .then((response) => response.json())
       .then((data) => setToyDetails(data));
   }, [toyID]);
@@ -26,8 +26,6 @@ const SingleToy = () => {
     subCategory,
     availableQuantity,
   } = toyDetails || {};
-
-  console.log(subCategory);
 
   return (
     <>

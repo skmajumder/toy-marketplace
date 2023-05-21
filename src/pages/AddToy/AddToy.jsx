@@ -25,7 +25,7 @@ const AddToy = () => {
     data.subCategory = selectedCategory;
     data.addedBy = user?.email;
 
-    fetch(`http://localhost:3000/add-toy`, {
+    fetch(`https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/add-toy`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const AddToy = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/categories")
+    fetch("https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/categories")
       .then((response) => response.json())
       .then((result) => {
         setCategories(result);

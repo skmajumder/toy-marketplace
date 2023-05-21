@@ -7,13 +7,12 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("");
-  console.log(sortOrder);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/my-toys?email=${user?.email}&sort=${sortOrder}`
+      `https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/my-toys?email=${user?.email}&sort=${sortOrder}`
     )
       .then((response) => response.json())
       .then((data) => setMyToys(data));
@@ -34,7 +33,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/delete-toy/${toyID}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-skmajumder.vercel.app/delete-toy/${toyID}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
