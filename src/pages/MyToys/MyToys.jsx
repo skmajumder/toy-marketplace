@@ -58,7 +58,7 @@ const MyToys = () => {
       <div className="section-my-toys">
         <div className="container px-10 my-16">
           <div className="flex flex-col">
-            <div className="my-4">
+            <div className="my-4 space-y-3">
               <button
                 onClick={() => setSortOrder("asc")}
                 className="px-4 py-2 bg-blue-500 text-white rounded-md mr-2"
@@ -71,7 +71,7 @@ const MyToys = () => {
               >
                 Sort Descending (Price)
               </button>
-              <p className="inline ml-4">By Defult it sort by Date</p>
+              <p className="md:inline ml-4">By Defult it sort by Date</p>
             </div>
             <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

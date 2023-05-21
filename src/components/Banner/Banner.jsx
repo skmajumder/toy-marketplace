@@ -8,7 +8,7 @@ const Banner = () => {
 
   return (
     <section
-      className="section-banner h-screen"
+      className="section-banner h-full md:h-screen"
       data-aos="fade-up"
       data-aos-duration="1500"
     >
